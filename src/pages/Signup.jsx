@@ -5,6 +5,7 @@ import { useAuthContext } from "../context/useAuthContext";
 
 export default function Signup() {
   const [email, setEmail] = useState("");
+
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null); //에러
   const { dispatch } = useAuthContext();
@@ -17,6 +18,7 @@ export default function Signup() {
         //가입 성공 후 자동로그인 되므로 로그인 상태 업데이트
         dispatch({ type: "LOGIN", payload: res.user }); //리듀서 업데이트
       })
+
       .catch((err) => {
         setError(err.message); //에러가 있으면 에러메세지를 state에 저장
       });
