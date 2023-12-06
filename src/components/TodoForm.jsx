@@ -22,15 +22,14 @@ export default function TodoForm() {
     <form onSubmit={handleSubmit}>
       <h2>Add Todo</h2>
       <label>
-        <span>새 할일 :</span>
         <input
           required
           type="text"
           onChange={(e) => setNewTodo(e.target.value)}
           value={newTodo}
         />
+        <button>추가</button>
       </label>
-      <button>추가</button>
     </form>
   );
 }
