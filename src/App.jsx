@@ -5,6 +5,7 @@ import Signup from "./pages/Signup.jsx";
 import Login from "./pages/Login.jsx";
 import Navbar from "./components/Navbar.jsx";
 import { useAuthContext } from "./context/useAuthContext.js";
+import Footer from "./components/Footer.jsx";
 
 function App() {
   const { user, authIsReady } = useAuthContext();
@@ -21,6 +22,7 @@ function App() {
             <Route path="/signup" element={!user ? <Signup /> : <Home />} />
             <Route path="/login" element={!user ? <Login /> : <Home />} />
           </Routes>
+          <Footer />
         </BrowserRouter>
       )}
     </div>
