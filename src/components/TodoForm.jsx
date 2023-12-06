@@ -2,6 +2,7 @@ import { addDoc, collection } from "firebase/firestore";
 import { useState } from "react";
 import { db } from "../firebase/config";
 import { useAuthContext } from "../context/useAuthContext";
+import { Timestamp } from "@firebase/firestore";
 
 export default function TodoForm() {
   const [newTodo, setNewTodo] = useState("");
@@ -13,6 +14,7 @@ export default function TodoForm() {
     await addDoc(ref, {
       title: newTodo, //입력할 내용을 객체형식으로 넣으면됨
       uid: user.uid,
+      createdAt: Timestamp.fromDate(new Date()), //날짜 추가
     }); //추가할 때 까지 대기 await
 
     setNewTodo("");
