@@ -19,16 +19,22 @@ export default function Navbar() {
   return (
     <nav>
       <h1>My Todo List</h1>
+      <p></p>
       <ul>
         <li>
           <Link to="/">Home</Link>
         </li>
-        <li>
-          <Link to="/login">Login</Link>
-        </li>
-        <li>
-          <Link to="/signup">Signup</Link>
-        </li>
+        {!user && (
+          <>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+            <li>
+              <Link to="/signup">Signup</Link>
+            </li>
+          </>
+        )}
+
         {user && <li onClick={logout}>Logout</li>}
       </ul>
     </nav>
