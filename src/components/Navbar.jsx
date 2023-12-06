@@ -18,17 +18,16 @@ export default function Navbar() {
   };
   return (
     <nav>
-      <h1>My Todo List</h1>
-      <p></p>
+      <h2>
+        <Link to="/">My Todo List</Link>
+      </h2>
       <ul>
         {user && (
           <>
             <li> 👋{user.email} 님</li>
           </>
         )}
-        <li>
-          <Link to="/">Home</Link>
-        </li>
+
         {!user && (
           <>
             <li>
