@@ -121,6 +121,19 @@ button:hover {
   flex-direction: column;
 }
 
+.sort {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 20px;
+}
+
+.sort select {
+  margin-left: 10px;
+  height: 30px;
+  width: 100px;
+  border: none;
+  background-color: #c1cddf;
+}
 .todo-list ul {
   padding: 0;
 }
@@ -207,6 +220,10 @@ footer {
   /* todo List */
   .todo-list {
     width: 85%;
+  }
+  .sort select {
+    height: 30px;
+    width: 80px;
   }
   /* todo form */
   .todoFormCon {
