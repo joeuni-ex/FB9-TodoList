@@ -1,14 +1,19 @@
-export default function TodoList({ todos }) {
+import { deleteDoc } from "firebase/firestore";
+import { db } from "../firebase/config";
 
+export default function TodoList({ todos }) {
   const handleClick = async (id) => {
-    console.log(id);
+    const ref = collection(db, "todos"); //db config 추가하기
+    await deleteDoc(ref);
   };
 
   return (
     <div className="todo-list">
       <ul>
-        {todos.map(todo => (
-          <li key={todo.id} onClick={() => handleClick(todo.id)}>{todo.title}</li>
+        {todos.map((todo) => (
+          <li key={todo.id} onClick={() => handleClick(todo.id)}>
+            {todo.title}
+          </li>
         ))}
       </ul>
     </div>
