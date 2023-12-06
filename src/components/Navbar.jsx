@@ -21,6 +21,11 @@ export default function Navbar() {
       <h1>My Todo List</h1>
       <p></p>
       <ul>
+        {user && (
+          <>
+            <li> {user.email} 님</li>
+          </>
+        )}
         <li>
           <Link to="/">Home</Link>
         </li>
@@ -35,7 +40,11 @@ export default function Navbar() {
           </>
         )}
 
-        {user && <li onClick={logout}>Logout</li>}
+        {user && (
+          <>
+            <li onClick={logout}>Logout</li>
+          </>
+        )}
       </ul>
     </nav>
   );
