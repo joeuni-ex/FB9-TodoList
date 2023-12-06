@@ -23,7 +23,7 @@ export default function Navbar() {
       <ul>
         {user && (
           <>
-            <li> {user.email} 님</li>
+            <li> 👋{user.email} 님</li>
           </>
         )}
         <li>
