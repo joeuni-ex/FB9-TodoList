@@ -13,11 +13,14 @@ body {
   margin: 0 auto;
 }
 nav {
-  background: #772eff;
+  background: #1f4172;
   padding: 10px 20px;
   color: #fff;
   display: flex;
   align-items: center;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
 }
 nav h1 {
   margin: 0;
@@ -52,7 +55,7 @@ input {
   margin-bottom: 12px;
 }
 button {
-  background: #772eff;
+  background: #1f4172;
   color: #fff;
   border: 0;
   padding: 6px 8px;
