@@ -25,8 +25,8 @@ export default function Signup() {
   };
 
   return (
-    <div>
-      <h2>회원가입</h2>
+    <div className="loginContainer">
+      <h2>Signup</h2>
       <form onSubmit={handleSubmit}>
         <label>
           <span>email:</span>
