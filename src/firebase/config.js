@@ -17,7 +17,7 @@ initializeApp(firebaseConfig);
 //DB초기화
 const db = getFirestore();
 
-//인증
+//인증 설정 -> import 필요
 const auth = getAuth();
 
 export { db, auth };
