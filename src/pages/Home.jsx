@@ -38,7 +38,7 @@ export default function Home() {
       <div className="todoFormCon">
         <TodoForm />
       </div>
-      <div> {todos && <TodoList todos={todos} />}</div>
+      {todos && <TodoList todos={todos} />}
     </div>
   );
 }
