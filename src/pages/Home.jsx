@@ -34,9 +34,11 @@ export default function Home() {
   }, []); //한 번만 실행
 
   return (
-    <div className="App">
-      {todos && <TodoList todos={todos} />}
-      <TodoForm />
+    <div className="home">
+      <div className="todoFormCon">
+        <TodoForm />
+      </div>
+      <div> {todos && <TodoList todos={todos} />}</div>
     </div>
   );
 }

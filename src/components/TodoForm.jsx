@@ -20,6 +20,7 @@ export default function TodoForm() {
 
   return (
     <form onSubmit={handleSubmit}>
+      <h2>Add Todo</h2>
       <label>
         <span>새 할일 :</span>
         <input
