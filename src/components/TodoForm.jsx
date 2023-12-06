@@ -1,15 +1,18 @@
 import { addDoc, collection } from "firebase/firestore";
 import { useState } from "react";
 import { db } from "../firebase/config";
+import { useAuthContext } from "../context/useAuthContext";
 
 export default function TodoForm() {
   const [newTodo, setNewTodo] = useState("");
+  const { user } = useAuthContext();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const ref = collection(db, "todos"); //db config 추가하기
     await addDoc(ref, {
       title: newTodo, //입력할 내용을 객체형식으로 넣으면됨
+      user: user.uid,
     }); //추가할 때 까지 대기 await
 
     setNewTodo("");
