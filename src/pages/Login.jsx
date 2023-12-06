@@ -1,18 +1,21 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { auth } from "../firebase/config";
+import { useAuthContext } from "../context/useAuthContext";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const { dispatch } = useAuthContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setError(null);
     signInWithEmailAndPassword(auth, email, password)
       .then((res) => {
-        console.log("유저로그인 : ", res.user);
+        //로그인 성공했으므로 유저 상태 업데이트
+        dispatch({ type: "LOGIN", payload: res.user }); //리듀서 업데이트
       })
       .catch((err) => {
         setError(err.message);
